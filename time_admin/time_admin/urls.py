@@ -17,14 +17,19 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from person.views import PersonListCreate, PersonDetail
-
-api_version = "api/v1"
+from person.views import PersonListCreate, PersonDetail, register
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path(
-        f"{api_version}/person/", PersonListCreate.as_view(), name="person-list-create"
-    ),
-    path(f"{api_version}/<int:pk>/", PersonDetail.as_view(), name="person-detail"),
+    path("api/v1/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/v1/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/v1/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
+    path("api/v1/register/", register, name="user_register"),
+    path("api/v1/person/", PersonListCreate.as_view(), name="person-list-create"),
+    path("api/v1/<int:pk>/", PersonDetail.as_view(), name="person-detail"),
 ]

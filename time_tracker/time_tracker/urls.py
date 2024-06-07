@@ -1,5 +1,5 @@
 """
-URL configuration for time_admin project.
+URL configuration for time_tracker project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -31,5 +31,5 @@ urlpatterns = [
     path("api/v1/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
     path("api/v1/register/", register, name="user_register"),
     path("api/v1/person/", PersonListCreate.as_view(), name="person-list-create"),
-    path("api/v1/<int:pk>/", PersonDetail.as_view(), name="person-detail"),
+    path("api/v1/person/<int:pk>/", PersonDetail.as_view(), name="person-detail"),
 ]

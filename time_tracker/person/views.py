@@ -8,7 +8,7 @@ from .serializers import PersonSerializer
 
 
 class PersonListCreate(generics.ListCreateAPIView):
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
     queryset = Person.objects.all()
     serializer_class = PersonSerializer
 

@@ -65,3 +65,10 @@ class TestPerson(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["email"], "jf@test.com")
+
+    def test_str_person(self):
+
+        person = Person.objects.create(
+            first_name="John", last_name="Doe", email="john@test.com"
+        )
+        self.assertEqual(str(person), "Doe, John")

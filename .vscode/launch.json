@@ -14,7 +14,8 @@
             ],
             "django": true,
             "autoStartBrowser": false,
-            "program": "${workspaceFolder}/time_tracker/manage.py"
+            "program": "${workspaceFolder}/time_tracker/manage.py",
+            "envFile": "${workspaceFolder}/.env"
         },
         {
             "name": "Python Debugger: Test fail",

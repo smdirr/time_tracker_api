@@ -11,7 +11,3 @@ class WSGITestCase(unittest.TestCase):
 class ASGITestCase(unittest.TestCase):
     def test_application_exists(self):
         self.assertIsNotNone(asgi_application)
-
-
-if __name__ == "__main__":
-    unittest.main()

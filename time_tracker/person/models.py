@@ -11,4 +11,4 @@ class Person(models.Model):
     user = models.ForeignKey(to=models_auth.User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
-        return f"{self.last_name}, {self.first_name}"
+        return f"{self.last_name}, {self.first_name} - {self.email}"
